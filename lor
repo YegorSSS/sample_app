@@ -1,0 +1,65 @@
+...................FFFFFF..........................
+
+Failures:
+
+  1) User pages profile page follow/unfollow buttons following a user should increment the followed user count
+     Failure/Error: before { visit user_path(other_user) }
+     ActionView::Template::Error:
+       Missing partial users/follow, application/follow with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+         * "/home/yegor/rails_projects/sample_app2/app/views"
+     # ./app/views/users/_follow_form.html.erb:6:in `_app_views_users__follow_form_html_erb___705450157_94469810'
+     # ./app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__227374746_93247310'
+     # ./spec/requests/user_pages_spec.rb:157:in `block (5 levels) in <top (required)>'
+
+  2) User pages profile page follow/unfollow buttons following a user should increment the other user's followers count
+     Failure/Error: before { visit user_path(other_user) }
+     ActionView::Template::Error:
+       Missing partial users/follow, application/follow with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+         * "/home/yegor/rails_projects/sample_app2/app/views"
+     # ./app/views/users/_follow_form.html.erb:6:in `_app_views_users__follow_form_html_erb___705450157_94469810'
+     # ./app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__227374746_93247310'
+     # ./spec/requests/user_pages_spec.rb:157:in `block (5 levels) in <top (required)>'
+
+  3) User pages profile page follow/unfollow buttons following a user toggling the button 
+     Failure/Error: before { visit user_path(other_user) }
+     ActionView::Template::Error:
+       Missing partial users/follow, application/follow with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+         * "/home/yegor/rails_projects/sample_app2/app/views"
+     # ./app/views/users/_follow_form.html.erb:6:in `_app_views_users__follow_form_html_erb___705450157_94469810'
+     # ./app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__227374746_93247310'
+     # ./spec/requests/user_pages_spec.rb:157:in `block (5 levels) in <top (required)>'
+
+  4) User pages profile page follow/unfollow buttons unfollowing a user should decrement the followed user count
+     Failure/Error: click_button "Unfollow"
+     Capybara::ElementNotFound:
+       Unable to find button "Unfollow"
+     # ./spec/requests/user_pages_spec.rb:185:in `block (6 levels) in <top (required)>'
+     # ./spec/requests/user_pages_spec.rb:184:in `block (5 levels) in <top (required)>'
+
+  5) User pages profile page follow/unfollow buttons unfollowing a user should decrement the other user's followers count
+     Failure/Error: click_button "Unfollow"
+     Capybara::ElementNotFound:
+       Unable to find button "Unfollow"
+     # ./spec/requests/user_pages_spec.rb:191:in `block (6 levels) in <top (required)>'
+     # ./spec/requests/user_pages_spec.rb:190:in `block (5 levels) in <top (required)>'
+
+  6) User pages profile page follow/unfollow buttons unfollowing a user toggling the button 
+     Failure/Error: before { click_button "Unfollow" }
+     Capybara::ElementNotFound:
+       Unable to find button "Unfollow"
+     # ./spec/requests/user_pages_spec.rb:196:in `block (6 levels) in <top (required)>'
+
+Finished in 14.76 seconds
+51 examples, 6 failures
+
+Failed examples:
+
+rspec ./spec/requests/user_pages_spec.rb:159 # User pages profile page follow/unfollow buttons following a user should increment the followed user count
+rspec ./spec/requests/user_pages_spec.rb:165 # User pages profile page follow/unfollow buttons following a user should increment the other user's followers count
+rspec ./spec/requests/user_pages_spec.rb:173 # User pages profile page follow/unfollow buttons following a user toggling the button 
+rspec ./spec/requests/user_pages_spec.rb:183 # User pages profile page follow/unfollow buttons unfollowing a user should decrement the followed user count
+rspec ./spec/requests/user_pages_spec.rb:189 # User pages profile page follow/unfollow buttons unfollowing a user should decrement the other user's followers count
+rspec ./spec/requests/user_pages_spec.rb:197 # User pages profile page follow/unfollow buttons unfollowing a user toggling the button 
+
+Randomized with seed 40174
+
